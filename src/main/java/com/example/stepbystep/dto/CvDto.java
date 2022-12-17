@@ -7,14 +7,16 @@ public class CvDto {
     private int entryOfUniversityYear;
     private int graduatedYear;
     private UniversityDto universityDto;
+    private MajorDto majorDto;
     private Set<ExperienceDto> experienceDtos;
 
     public CvDto() {}
 
-    public CvDto(int entryOfUniversityYear, int graduatedYear, UniversityDto universityDto, Set<ExperienceDto> experienceDtos) {
+    public CvDto(int entryOfUniversityYear, int graduatedYear, UniversityDto universityDto, MajorDto majorDto, Set<ExperienceDto> experienceDtos) {
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.universityDto = universityDto;
+        this.majorDto = majorDto;
         this.experienceDtos = experienceDtos;
     }
 

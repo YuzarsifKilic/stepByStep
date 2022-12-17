@@ -10,10 +10,14 @@ public class CvDtoConverter {
 
     private final UniversityDtoConverter universityDtoConverter;
     private final ExperienceDtoConverter experienceDtoConverter;
+    private final MajorDtoConverter majorDtoConverter;
 
-    public CvDtoConverter(UniversityDtoConverter universityDtoConverter, ExperienceDtoConverter experienceDtoConverter) {
+    public CvDtoConverter(UniversityDtoConverter universityDtoConverter,
+                          ExperienceDtoConverter experienceDtoConverter,
+                          MajorDtoConverter majorDtoConverter) {
         this.universityDtoConverter = universityDtoConverter;
         this.experienceDtoConverter = experienceDtoConverter;
+        this.majorDtoConverter = majorDtoConverter;
     }
 
     public CvDto converter(Cv from) {
@@ -21,7 +25,7 @@ public class CvDtoConverter {
                 from.getEntryOfUniversityYear(),
                 from.getGraduatedYear(),
                 universityDtoConverter.convert(from.getUniversity()),
-                from.getExperiences().stream().map(e -> experienceDtoConverter.convert(e)).collect(Collectors.toSet())
-        );
+                majorDtoConverter.convert(from.getMajor()),
+                from.getExperiences().stream().map(e -> experienceDtoConverter.convert(e)).collect(Collectors.toSet()));
     }
 }
