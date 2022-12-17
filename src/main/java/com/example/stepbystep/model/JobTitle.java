@@ -1,8 +1,9 @@
 package com.example.stepbystep.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class JobTitle {
@@ -11,12 +12,15 @@ public class JobTitle {
     @GeneratedValue
     private int id;
     private String jobTitleName;
+    @OneToMany(mappedBy = "jobTitle", cascade = {CascadeType.ALL})
+    private Set<Experience> experiences = new HashSet<>();
 
     public JobTitle() {}
 
-    public JobTitle(int id, String jobTitleName) {
+    public JobTitle(int id, String jobTitleName, Set<Experience> experiences) {
         this.id = id;
         this.jobTitleName = jobTitleName;
+        this.experiences = experiences;
     }
 
     public int getId() {

@@ -20,8 +20,19 @@ public class Cv {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "university_id", nullable = false)
     private University university;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "major_id", nullable = false)
+    private Major major;
     @ManyToMany(mappedBy = "cvs")
     private Set<Experience> experiences = new HashSet<>();
+
+    public Major getMajor() {
+        return major;
+    }
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
 
     public University getUniversity() {
         return university;
@@ -33,17 +44,19 @@ public class Cv {
 
     public Cv() {}
 
-    public Cv(int entryOfUniversityYear, int graduatedYear, University university) {
+    public Cv(int entryOfUniversityYear, int graduatedYear, University university, Major major) {
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
+        this.major = major;
     }
 
-    public Cv(String id, int entryOfUniversityYear, int graduatedYear, University university, Set<Experience> experiences) {
+    public Cv(String id, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<Experience> experiences) {
         this.id = id;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
+        this.major = major;
         this.experiences = experiences;
     }
 

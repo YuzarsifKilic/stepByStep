@@ -17,6 +17,8 @@ public class Experience {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDHexGenerator")
     private String id;
     private String companyName;
+    private int entryYear;
+    private int quitYear;
     @ManyToOne
     @JoinColumn(name = "job_title_id")
     private JobTitle jobTitle;
@@ -37,14 +39,20 @@ public class Experience {
 
     public Experience() {}
 
-    public Experience(String companyName, Set<Cv> cvs) {
+    public Experience(String companyName, int entryYear, int quitYear, JobTitle jobTitle, Set<Cv> cvs) {
         this.companyName = companyName;
+        this.entryYear = entryYear;
+        this.quitYear = quitYear;
+        this.jobTitle = jobTitle;
         this.cvs = cvs;
     }
 
-    public Experience(String id, String companyName, Set<Cv> cvs) {
+    public Experience(String id, String companyName, int entryYear, int quitYear, JobTitle jobTitle, Set<Cv> cvs) {
         this.id = id;
         this.companyName = companyName;
+        this.entryYear = entryYear;
+        this.quitYear = quitYear;
+        this.jobTitle = jobTitle;
         this.cvs = cvs;
     }
 
