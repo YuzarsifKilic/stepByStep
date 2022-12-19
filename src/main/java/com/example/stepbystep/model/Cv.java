@@ -15,6 +15,8 @@ public class Cv {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDHexGenerator")
     private String id;
+    @OneToOne(mappedBy = "cv")
+    private Candidate candidate;
     private int entryOfUniversityYear;
     private int graduatedYear;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -25,6 +27,14 @@ public class Cv {
     private Major major;
     @ManyToMany(mappedBy = "cvs")
     private Set<Experience> experiences = new HashSet<>();
+
+    public Candidate getCandidate() {
+        return candidate;
+    }
+
+    public void setCandidate(Candidate candidate) {
+        this.candidate = candidate;
+    }
 
     public Major getMajor() {
         return major;
@@ -44,15 +54,17 @@ public class Cv {
 
     public Cv() {}
 
-    public Cv(int entryOfUniversityYear, int graduatedYear, University university, Major major) {
+    public Cv(Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major) {
+        this.candidate = candidate;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
         this.major = major;
     }
 
-    public Cv(String id, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<Experience> experiences) {
+    public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<Experience> experiences) {
         this.id = id;
+        this.candidate = candidate;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
