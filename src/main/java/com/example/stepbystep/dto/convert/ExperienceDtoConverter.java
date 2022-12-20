@@ -1,5 +1,6 @@
-package com.example.stepbystep.dto;
+package com.example.stepbystep.dto.convert;
 
+import com.example.stepbystep.dto.model.ExperienceDto;
 import com.example.stepbystep.model.Experience;
 import org.springframework.stereotype.Component;
 

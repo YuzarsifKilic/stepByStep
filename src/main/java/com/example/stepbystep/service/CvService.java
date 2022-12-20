@@ -1,8 +1,8 @@
 package com.example.stepbystep.service;
 
-import com.example.stepbystep.dto.CreateCvRequest;
-import com.example.stepbystep.dto.CvDto;
-import com.example.stepbystep.dto.CvDtoConverter;
+import com.example.stepbystep.dto.request.CreateCvRequest;
+import com.example.stepbystep.dto.model.CvDto;
+import com.example.stepbystep.dto.convert.CvDtoConverter;
 import com.example.stepbystep.exception.CvNotFoundException;
 import com.example.stepbystep.model.Cv;
 import com.example.stepbystep.repository.CvRepository;

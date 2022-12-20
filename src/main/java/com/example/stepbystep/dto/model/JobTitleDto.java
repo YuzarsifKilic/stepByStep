@@ -1,4 +1,4 @@
-package com.example.stepbystep.dto;
+package com.example.stepbystep.dto.model;
 
 public class JobTitleDto {
 

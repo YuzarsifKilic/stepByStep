@@ -1,8 +1,7 @@
 package com.example.stepbystep.controller;
 
-import com.example.stepbystep.dto.CreateCvRequest;
-import com.example.stepbystep.dto.CvDto;
-import com.example.stepbystep.model.Cv;
+import com.example.stepbystep.dto.request.CreateCvRequest;
+import com.example.stepbystep.dto.model.CvDto;
 import com.example.stepbystep.service.CvService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

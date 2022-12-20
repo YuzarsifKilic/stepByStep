@@ -1,6 +1,6 @@
 package com.example.stepbystep.controller;
 
-import com.example.stepbystep.dto.CreateCandidateRequest;
+import com.example.stepbystep.dto.request.CreateCandidateRequest;
 import com.example.stepbystep.model.Candidate;
 import com.example.stepbystep.service.CandidateService;
 import org.springframework.http.ResponseEntity;

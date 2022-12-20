@@ -1,6 +1,6 @@
 package com.example.stepbystep.service;
 
-import com.example.stepbystep.dto.CreateCandidateRequest;
+import com.example.stepbystep.dto.request.CreateCandidateRequest;
 import com.example.stepbystep.model.Candidate;
 import com.example.stepbystep.repository.CandidateRepository;
 import org.springframework.stereotype.Service;
@@ -27,5 +27,9 @@ public class CandidateService {
                 request.getLastName(),
                 request.getPhoneNumber());
         return candidateRepository.save(candidate);
+    }
+
+    private boolean checkTheEmailInUse(String email) {
+        return candidateRepository.findAll().stream().anyMatch(c -> c.getEmail().equals(email));
     }
 }

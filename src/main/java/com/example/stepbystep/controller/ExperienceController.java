@@ -1,6 +1,6 @@
 package com.example.stepbystep.controller;
 
-import com.example.stepbystep.dto.CreateExperienceRequest;
+import com.example.stepbystep.dto.request.CreateExperienceRequest;
 import com.example.stepbystep.model.Experience;
 import com.example.stepbystep.service.ExperienceService;
 import org.springframework.http.ResponseEntity;

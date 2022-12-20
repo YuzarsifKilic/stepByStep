@@ -1,11 +1,8 @@
-package com.example.stepbystep.dto;
-
-import com.example.stepbystep.model.Candidate;
+package com.example.stepbystep.dto.model;
 
 import java.util.Set;
 
 public class CvDto {
-
 
     private int entryOfUniversityYear;
     private int graduatedYear;

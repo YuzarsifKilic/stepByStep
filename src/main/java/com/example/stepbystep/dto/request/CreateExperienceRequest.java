@@ -1,4 +1,4 @@
-package com.example.stepbystep.dto;
+package com.example.stepbystep.dto.request;
 
 public class CreateExperienceRequest {
 

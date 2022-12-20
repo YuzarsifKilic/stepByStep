@@ -1,13 +1,12 @@
 package com.example.stepbystep.service;
 
-import com.example.stepbystep.dto.CreateExperienceRequest;
+import com.example.stepbystep.dto.request.CreateExperienceRequest;
 import com.example.stepbystep.model.Cv;
 import com.example.stepbystep.model.Experience;
 import com.example.stepbystep.repository.ExperienceRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Service
