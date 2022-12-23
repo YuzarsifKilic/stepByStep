@@ -15,10 +15,17 @@ public class Employer extends User{
 
     public Employer() {}
 
-    public Employer(String companyName, String webSite, Set<JobAdvertisement> jobAdvertisements) {
+    public Employer(String email, String password, String companyName, String webSite, Set<JobAdvertisement> jobAdvertisements) {
+        super(email, password);
         this.companyName = companyName;
         this.webSite = webSite;
         this.jobAdvertisements = jobAdvertisements;
+    }
+
+    public Employer(String email, String password, String companyName, String webSite) {
+        super(email, password);
+        this.companyName = companyName;
+        this.webSite = webSite;
     }
 
     public String getCompanyName() {
