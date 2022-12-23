@@ -29,7 +29,31 @@ public class CandidateService {
         return candidateRepository.save(candidate);
     }
 
-    private boolean checkTheEmailInUse(String email) {
-        return candidateRepository.findAll().stream().anyMatch(c -> c.getEmail().equals(email));
+    private String checkTheEmailInUse(Candidate candidate) {
+        final boolean result = candidateRepository.findAll().stream().noneMatch(c -> c.getEmail().equals(candidate.getEmail()));
+        return result ? checkThePhoneInUse(candidate) : printError(Error.EmailInUse);
     }
+
+    private String checkThePhoneInUse(Candidate candidate) {
+        final boolean result = candidateRepository.findAll().stream().noneMatch(c -> c.getTelNo().equals(candidate.getTelNo()));
+        return result ? printError(Error.Successful) : printError(Error.PhoneNumberInUse);
+    }
+
+    enum Error{
+        EmailInUse,
+        PhoneNumberInUse,
+        Successful
+    }
+
+    private String printError(Error error) {
+        switch (error) {
+
+            case EmailInUse -> { return "Bu Email Kullanımda"; }
+            case PhoneNumberInUse -> { return "Bu Telefon Numarası Kullanımda"; }
+            case Successful -> { return "Kayıt İşlemi Başarılı"; }
+            default -> { return "Beklenmeyen Bir Hata Oluştu"; }
+        }
+    }
+
+
 }

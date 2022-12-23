@@ -14,10 +14,14 @@ public class ExperienceService {
 
     private final ExperienceRepository experienceRepository;
     private final CvService cvService;
+    private final JobTitleService jobTitleService;
 
-    public ExperienceService(ExperienceRepository experienceRepository, CvService cvService) {
+    public ExperienceService(ExperienceRepository experienceRepository,
+                             CvService cvService,
+                             JobTitleService jobTitleService) {
         this.experienceRepository = experienceRepository;
         this.cvService = cvService;
+        this.jobTitleService = jobTitleService;
     }
 
     public Experience save(CreateExperienceRequest request) {
@@ -26,6 +30,9 @@ public class ExperienceService {
 
         Experience experience = new Experience(
                 request.getCompanyName(),
+                request.getEntryYear(),
+                request.getQuitYear(),
+                jobTitleService.findById(request.getJobTitleId()),
                 cvs
         );
 

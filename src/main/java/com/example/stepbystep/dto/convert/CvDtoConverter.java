@@ -23,7 +23,7 @@ public class CvDtoConverter {
 
     public CvDto converter(Cv from) {
         return new CvDto(
-                from.getEntryOfUniversityYear(),
+                id, from.getEntryOfUniversityYear(),
                 from.getGraduatedYear(),
                 universityDtoConverter.convert(from.getUniversity()),
                 majorDtoConverter.convert(from.getMajor()),

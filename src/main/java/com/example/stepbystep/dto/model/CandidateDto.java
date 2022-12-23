@@ -6,16 +6,16 @@ public class CandidateDto {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private CvDto cvDto;
+    private CandidateCvDto candidateCvDto;
 
     public CandidateDto() {}
 
-    public CandidateDto(String email, String firstName, String lastName, String phoneNumber, CvDto cvDto) {
+    public CandidateDto(String email, String firstName, String lastName, String phoneNumber, CandidateCvDto candidateCvDto) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.cvDto = cvDto;
+        this.candidateCvDto = candidateCvDto;
     }
 
     public String getEmail() {
@@ -50,11 +50,11 @@ public class CandidateDto {
         this.phoneNumber = phoneNumber;
     }
 
-    public CvDto getCvDto() {
-        return cvDto;
+    public CandidateCvDto getCandidateCvDto() {
+        return candidateCvDto;
     }
 
-    public void setCvDto(CvDto cvDto) {
-        this.cvDto = cvDto;
+    public void setCandidateCvDto(CandidateCvDto candidateCvDto) {
+        this.candidateCvDto = candidateCvDto;
     }
 }
