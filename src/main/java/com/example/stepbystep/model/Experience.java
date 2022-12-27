@@ -79,4 +79,20 @@ public class Experience {
     public void setCvs(Set<Cv> cvs) {
         this.cvs = cvs;
     }
+
+    public int getEntryYear() {
+        return entryYear;
+    }
+
+    public void setEntryYear(int entryYear) {
+        this.entryYear = entryYear;
+    }
+
+    public int getQuitYear() {
+        return quitYear;
+    }
+
+    public void setQuitYear(int quitYear) {
+        this.quitYear = quitYear;
+    }
 }

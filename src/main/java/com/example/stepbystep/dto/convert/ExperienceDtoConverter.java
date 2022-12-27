@@ -17,6 +17,8 @@ public class ExperienceDtoConverter {
         return new ExperienceDto(
                 from.getId(),
                 from.getCompanyName(),
+                from.getEntryYear(),
+                from.getQuitYear(),
                 converter.convert(from.getJobTitle()));
     }
 }

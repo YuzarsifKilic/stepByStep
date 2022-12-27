@@ -1,5 +1,6 @@
 package com.example.stepbystep.controller;
 
+import com.example.stepbystep.dto.model.ExperienceDto;
 import com.example.stepbystep.dto.request.CreateExperienceRequest;
 import com.example.stepbystep.model.Experience;
 import com.example.stepbystep.service.ExperienceService;
@@ -20,7 +21,7 @@ public class ExperienceController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Experience> save(@RequestBody CreateExperienceRequest request) {
+    public ResponseEntity<ExperienceDto> save(@RequestBody CreateExperienceRequest request) {
         return ResponseEntity.ok(experienceService.save(request));
     }
 }
