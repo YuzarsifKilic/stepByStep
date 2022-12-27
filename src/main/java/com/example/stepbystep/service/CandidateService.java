@@ -1,6 +1,7 @@
 package com.example.stepbystep.service;
 
 import com.example.stepbystep.dto.request.CreateCandidateRequest;
+import com.example.stepbystep.exception.CandidateNotFoundException;
 import com.example.stepbystep.model.Candidate;
 import com.example.stepbystep.repository.CandidateRepository;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,12 @@ public class CandidateService {
 
     public List<Candidate> getAll() {
         return candidateRepository.findAll();
+    }
+
+    protected Candidate findById(String id) {
+        return candidateRepository.findById(id).orElseThrow(
+                () -> new CandidateNotFoundException(id + " ye sahip bir candidate bulunamadı")
+        );
     }
 
     public Candidate save(CreateCandidateRequest request) {

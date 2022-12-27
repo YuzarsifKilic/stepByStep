@@ -9,13 +9,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","candidate"})
 public class Cv {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDHexGenerator")
     private String id;
-    @OneToOne(mappedBy = "cv")
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "candidate_id", referencedColumnName = "id")
     private Candidate candidate;
     private int entryOfUniversityYear;
     private int graduatedYear;

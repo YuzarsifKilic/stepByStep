@@ -21,12 +21,15 @@ public class CvDtoConverter {
         this.majorDtoConverter = majorDtoConverter;
     }
 
+
     public CvDto converter(Cv from) {
         return new CvDto(
-                id, from.getEntryOfUniversityYear(),
+                from.getId(),
+                from.getEntryOfUniversityYear(),
                 from.getGraduatedYear(),
                 universityDtoConverter.convert(from.getUniversity()),
                 majorDtoConverter.convert(from.getMajor()),
                 from.getExperiences().stream().map(e -> experienceDtoConverter.convert(e)).collect(Collectors.toSet()));
     }
+
 }

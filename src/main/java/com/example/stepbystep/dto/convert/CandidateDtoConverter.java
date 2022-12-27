@@ -13,6 +13,7 @@ public class CandidateDtoConverter {
         this.converter = converter;
     }
 
+    /*
     public CandidateDto convert(Candidate candidate) {
         return new CandidateDto(
                 candidate.getEmail(),
@@ -22,4 +23,6 @@ public class CandidateDtoConverter {
                 converter.converter(candidate.getCv())
         );
     }
+    */
+
 }

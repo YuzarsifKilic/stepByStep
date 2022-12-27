@@ -2,16 +2,20 @@ package com.example.stepbystep.dto.request;
 
 public class CreateCvRequest {
 
+    private String candidateId;
     private int entryOfUniversityYear;
     private int graduatedYear;
     private int universityId;
+    private int majorId;
 
     public CreateCvRequest() {}
 
-    public CreateCvRequest(int entryOfUniversityYear, int graduatedYear, int universityId) {
+    public CreateCvRequest(String candidateId, int entryOfUniversityYear, int graduatedYear, int universityId, int majorId) {
+        this.candidateId = candidateId;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.universityId = universityId;
+        this.majorId = majorId;
     }
 
     public int getEntryOfUniversityYear() {
@@ -36,5 +40,21 @@ public class CreateCvRequest {
 
     public void setUniversityId(int universityId) {
         this.universityId = universityId;
+    }
+
+    public String getCandidateId() {
+        return candidateId;
+    }
+
+    public void setCandidateId(String candidateId) {
+        this.candidateId = candidateId;
+    }
+
+    public int getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(int majorId) {
+        this.majorId = majorId;
     }
 }

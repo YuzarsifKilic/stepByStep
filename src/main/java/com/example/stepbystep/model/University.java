@@ -1,5 +1,6 @@
 package com.example.stepbystep.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -7,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","cvs"})
 public class University {
 
     @Id

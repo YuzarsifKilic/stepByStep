@@ -10,8 +10,7 @@ public class Candidate extends User{
     private String firstName;
     private String lastName;
     private String telNo;
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "cv_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "candidate")
     private Cv cv;
 
     public Cv getCv() {

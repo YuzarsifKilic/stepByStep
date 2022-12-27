@@ -16,11 +16,19 @@ public class CvService {
 
     private final CvRepository cvRepository;
     private final UniversityService universityService;
+    private final CandidateService candidateService;
+    private final MajorService majorService;
     private final CvDtoConverter converter;
 
-    public CvService(CvRepository cvRepository, UniversityService universityService, CvDtoConverter converter) {
+    public CvService(CvRepository cvRepository,
+                     UniversityService universityService,
+                     CandidateService candidateService,
+                     MajorService majorService,
+                     CvDtoConverter converter) {
         this.cvRepository = cvRepository;
         this.universityService = universityService;
+        this.candidateService = candidateService;
+        this.majorService = majorService;
         this.converter = converter;
     }
 
@@ -30,9 +38,11 @@ public class CvService {
 
     public CvDto save(CreateCvRequest request) {
         Cv cv = new Cv(
+                candidateService.findById(request.getCandidateId()),
                 request.getEntryOfUniversityYear(),
                 request.getGraduatedYear(),
-                universityService.findByUniversityId(request.getUniversityId())
+                universityService.findByUniversityId(request.getUniversityId()),
+                majorService.findById(request.getMajorId())
         );
         return converter.converter(cvRepository.save(cv));
     }
