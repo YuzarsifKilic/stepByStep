@@ -64,6 +64,15 @@ public class Cv {
         this.major = major;
     }
 
+    public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major) {
+        this.id = id;
+        this.candidate = candidate;
+        this.entryOfUniversityYear = entryOfUniversityYear;
+        this.graduatedYear = graduatedYear;
+        this.university = university;
+        this.major = major;
+    }
+
     public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<Experience> experiences) {
         this.id = id;
         this.candidate = candidate;

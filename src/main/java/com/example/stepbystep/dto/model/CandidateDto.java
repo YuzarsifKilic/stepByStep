@@ -1,5 +1,7 @@
 package com.example.stepbystep.dto.model;
 
+import java.util.Objects;
+
 public class CandidateDto {
 
     private String email;
@@ -56,5 +58,18 @@ public class CandidateDto {
 
     public void setCandidateCvDto(CandidateCvDto candidateCvDto) {
         this.candidateCvDto = candidateCvDto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CandidateDto that = (CandidateDto) o;
+        return Objects.equals(email, that.email) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(candidateCvDto, that.candidateCvDto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, firstName, lastName, phoneNumber, candidateCvDto);
     }
 }

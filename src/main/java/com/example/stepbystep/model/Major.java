@@ -19,6 +19,11 @@ public class Major {
 
     public Major() {}
 
+    public Major(int id, String majorName) {
+        this.id = id;
+        this.majorName = majorName;
+    }
+
     public Major(int id, String majorName, Set<Cv> cvs) {
         this.id = id;
         this.majorName = majorName;

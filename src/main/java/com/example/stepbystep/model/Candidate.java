@@ -2,6 +2,8 @@ package com.example.stepbystep.model;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "candidates")
 @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
@@ -66,5 +68,18 @@ public class Candidate extends User{
 
     public void setTelNo(String telNo) {
         this.telNo = telNo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Candidate candidate = (Candidate) o;
+        return Objects.equals(firstName, candidate.firstName) && Objects.equals(lastName, candidate.lastName) && Objects.equals(telNo, candidate.telNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, telNo);
     }
 }

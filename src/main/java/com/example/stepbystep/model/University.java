@@ -20,6 +20,11 @@ public class University {
 
     public University() {}
 
+    public University(int id, String universityName) {
+        this.id = id;
+        this.universityName = universityName;
+    }
+
     public University(int id, String universityName, Set<Cv> cvs) {
         this.id = id;
         this.universityName = universityName;
