@@ -11,11 +11,11 @@ public class CandidateCvDto {
     private int graduatedYear;
     private University university;
     private Major major;
-    private Set<ExperienceDto> experienceDtos;
+    private Set<CvExperienceDto> experienceDtos;
 
     public CandidateCvDto() {}
 
-    public CandidateCvDto(int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<ExperienceDto> experienceDtos) {
+    public CandidateCvDto(int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<CvExperienceDto> experienceDtos) {
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
@@ -55,11 +55,11 @@ public class CandidateCvDto {
         this.major = major;
     }
 
-    public Set<ExperienceDto> getExperienceDtos() {
+    public Set<CvExperienceDto> getExperienceDtos() {
         return experienceDtos;
     }
 
-    public void setExperienceDtos(Set<ExperienceDto> experienceDtos) {
+    public void setExperienceDtos(Set<CvExperienceDto> experienceDtos) {
         this.experienceDtos = experienceDtos;
     }
 }

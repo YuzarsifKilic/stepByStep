@@ -24,7 +24,9 @@ public class CvDtoConverter {
                 from.getGraduatedYear(),
                 from.getUniversity(),
                 from.getMajor(),
-                from.getExperiences().stream().map(e -> experienceDtoConverter.convert(e)).collect(Collectors.toSet()));
+                from.getExperiences().stream()
+                        .map(e -> experienceDtoConverter.convertToCvExperienceDto(e))
+                        .collect(Collectors.toSet()));
     }
 
     public CandidateCvDto convertToCandidateCvDto(Cv from) {
@@ -33,7 +35,9 @@ public class CvDtoConverter {
                 from.getGraduatedYear(),
                 from.getUniversity(),
                 from.getMajor(),
-                from.getExperiences().stream().map(experienceDtoConverter::convert).collect(Collectors.toSet())
+                from.getExperiences().stream()
+                        .map(experienceDtoConverter::convertToCvExperienceDto)
+                        .collect(Collectors.toSet())
         );
     }
 

@@ -1,5 +1,6 @@
 package com.example.stepbystep.dto.convert;
 
+import com.example.stepbystep.dto.model.CvExperienceDto;
 import com.example.stepbystep.dto.model.ExperienceDto;
 import com.example.stepbystep.model.Experience;
 import org.springframework.stereotype.Component;
@@ -7,11 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ExperienceDtoConverter {
 
-    private final JobTitleDtoConverter converter;
 
-    public ExperienceDtoConverter(JobTitleDtoConverter converter) {
-        this.converter = converter;
-    }
+    public ExperienceDtoConverter() {}
 
     public ExperienceDto convert(Experience from) {
         return new ExperienceDto(
@@ -19,6 +17,14 @@ public class ExperienceDtoConverter {
                 from.getCompanyName(),
                 from.getEntryYear(),
                 from.getQuitYear(),
-                converter.convert(from.getJobTitle()));
+                from.getJobTitle());
+    }
+
+    public CvExperienceDto convertToCvExperienceDto(Experience from) {
+        return new CvExperienceDto(
+                from.getCompanyName(),
+                from.getEntryYear(),
+                from.getQuitYear(),
+                from.getJobTitle());
     }
 }
