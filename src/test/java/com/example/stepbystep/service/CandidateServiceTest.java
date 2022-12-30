@@ -1,5 +1,6 @@
 package com.example.stepbystep.service;
 
+import com.example.stepbystep.TestSupport;
 import com.example.stepbystep.dto.request.CreateCandidateRequest;
 import com.example.stepbystep.model.Candidate;
 import com.example.stepbystep.repository.CandidateRepository;
@@ -9,9 +10,11 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CandidateServiceTest {
+public class CandidateServiceTest extends TestSupport {
 
     private CandidateService candidateService;
 
@@ -47,5 +50,11 @@ public class CandidateServiceTest {
         assertEquals(result, candidate);
 
         Mockito.verify(candidateRepository).save(candidate);
+    }
+
+    @Test
+    public void testGetAllCandidates_itShouldReturnCandidateDtoList() {
+        List<Candidate> candidateList = generateCandidates();
+        Mockito.when(candidateRepository.findAll()).thenReturn(candidateList);
     }
 }

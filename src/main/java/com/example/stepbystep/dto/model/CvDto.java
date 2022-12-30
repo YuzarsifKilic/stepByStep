@@ -1,5 +1,8 @@
 package com.example.stepbystep.dto.model;
 
+import com.example.stepbystep.model.Major;
+import com.example.stepbystep.model.University;
+
 import java.util.Set;
 
 public class CvDto {
@@ -7,18 +10,18 @@ public class CvDto {
     private String id;
     private int entryOfUniversityYear;
     private int graduatedYear;
-    private UniversityDto universityDto;
-    private MajorDto majorDto;
-    private Set<ExperienceDto> experienceDtos;
+    private University university;
+    private Major major;
+    private Set<CvExperienceDto> experienceDtos;
 
     public CvDto() {}
 
-    public CvDto(String id, int entryOfUniversityYear, int graduatedYear, UniversityDto universityDto, MajorDto majorDto, Set<ExperienceDto> experienceDtos) {
+    public CvDto(String id, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<CvExperienceDto> experienceDtos) {
         this.id = id;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
-        this.universityDto = universityDto;
-        this.majorDto = majorDto;
+        this.university = university;
+        this.major = major;
         this.experienceDtos = experienceDtos;
     }
 
@@ -38,19 +41,27 @@ public class CvDto {
         this.graduatedYear = graduatedYear;
     }
 
-    public UniversityDto getUniversityDto() {
-        return universityDto;
+    public University getUniversity() {
+        return university;
     }
 
-    public void setUniversityDto(UniversityDto universityDto) {
-        this.universityDto = universityDto;
+    public void setUniversity(University university) {
+        this.university = university;
     }
 
-    public Set<ExperienceDto> getExperienceDtos() {
+    public Major getMajor() {
+        return major;
+    }
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public Set<CvExperienceDto> getExperienceDtos() {
         return experienceDtos;
     }
 
-    public void setExperienceDtos(Set<ExperienceDto> experienceDtos) {
+    public void setExperienceDtos(Set<CvExperienceDto> experienceDtos) {
         this.experienceDtos = experienceDtos;
     }
 
@@ -60,13 +71,5 @@ public class CvDto {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public MajorDto getMajorDto() {
-        return majorDto;
-    }
-
-    public void setMajorDto(MajorDto majorDto) {
-        this.majorDto = majorDto;
     }
 }

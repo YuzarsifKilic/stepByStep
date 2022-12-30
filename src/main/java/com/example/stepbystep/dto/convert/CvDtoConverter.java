@@ -1,5 +1,6 @@
 package com.example.stepbystep.dto.convert;
 
+import com.example.stepbystep.dto.model.CandidateCvDto;
 import com.example.stepbystep.dto.model.CvDto;
 import com.example.stepbystep.model.Cv;
 import org.springframework.stereotype.Component;
@@ -9,16 +10,10 @@ import java.util.stream.Collectors;
 @Component
 public class CvDtoConverter {
 
-    private final UniversityDtoConverter universityDtoConverter;
     private final ExperienceDtoConverter experienceDtoConverter;
-    private final MajorDtoConverter majorDtoConverter;
 
-    public CvDtoConverter(UniversityDtoConverter universityDtoConverter,
-                          ExperienceDtoConverter experienceDtoConverter,
-                          MajorDtoConverter majorDtoConverter) {
-        this.universityDtoConverter = universityDtoConverter;
+    public CvDtoConverter(ExperienceDtoConverter experienceDtoConverter) {
         this.experienceDtoConverter = experienceDtoConverter;
-        this.majorDtoConverter = majorDtoConverter;
     }
 
 
@@ -27,9 +22,19 @@ public class CvDtoConverter {
                 from.getId(),
                 from.getEntryOfUniversityYear(),
                 from.getGraduatedYear(),
-                universityDtoConverter.convert(from.getUniversity()),
-                majorDtoConverter.convert(from.getMajor()),
+                from.getUniversity(),
+                from.getMajor(),
                 from.getExperiences().stream().map(e -> experienceDtoConverter.convert(e)).collect(Collectors.toSet()));
+    }
+
+    public CandidateCvDto convertToCandidateCvDto(Cv from) {
+        return new CandidateCvDto(
+                from.getEntryOfUniversityYear(),
+                from.getGraduatedYear(),
+                from.getUniversity(),
+                from.getMajor(),
+                from.getExperiences().stream().map(experienceDtoConverter::convert).collect(Collectors.toSet())
+        );
     }
 
 }

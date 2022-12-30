@@ -1,22 +1,25 @@
 package com.example.stepbystep.dto.model;
 
+import com.example.stepbystep.model.Major;
+import com.example.stepbystep.model.University;
+
 import java.util.Set;
 
 public class CandidateCvDto {
 
     private int entryOfUniversityYear;
     private int graduatedYear;
-    private UniversityDto universityDto;
-    private MajorDto majorDto;
+    private University university;
+    private Major major;
     private Set<ExperienceDto> experienceDtos;
 
     public CandidateCvDto() {}
 
-    public CandidateCvDto(int entryOfUniversityYear, int graduatedYear, UniversityDto universityDto, MajorDto majorDto, Set<ExperienceDto> experienceDtos) {
+    public CandidateCvDto(int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<ExperienceDto> experienceDtos) {
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
-        this.universityDto = universityDto;
-        this.majorDto = majorDto;
+        this.university = university;
+        this.major = major;
         this.experienceDtos = experienceDtos;
     }
 
@@ -36,20 +39,20 @@ public class CandidateCvDto {
         this.graduatedYear = graduatedYear;
     }
 
-    public UniversityDto getUniversityDto() {
-        return universityDto;
+    public University getUniversity() {
+        return university;
     }
 
-    public void setUniversityDto(UniversityDto universityDto) {
-        this.universityDto = universityDto;
+    public void setUniversity(University university) {
+        this.university = university;
     }
 
-    public MajorDto getMajorDto() {
-        return majorDto;
+    public Major getMajor() {
+        return major;
     }
 
-    public void setMajorDto(MajorDto majorDto) {
-        this.majorDto = majorDto;
+    public void setMajor(Major major) {
+        this.major = major;
     }
 
     public Set<ExperienceDto> getExperienceDtos() {

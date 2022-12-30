@@ -4,6 +4,9 @@ import com.example.stepbystep.dto.model.CandidateDto;
 import com.example.stepbystep.model.Candidate;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CandidateDtoConverter {
 
@@ -13,16 +16,24 @@ public class CandidateDtoConverter {
         this.converter = converter;
     }
 
-    /*
+
     public CandidateDto convert(Candidate candidate) {
         return new CandidateDto(
                 candidate.getEmail(),
                 candidate.getFirstName(),
                 candidate.getLastName(),
                 candidate.getTelNo(),
-                converter.converter(candidate.getCv())
+                converter.convertToCandidateCvDto(candidate.getCv())
         );
     }
-    */
 
+
+    public List<CandidateDto> convert(List<Candidate> fromList) {
+        return fromList.stream().map(from -> new CandidateDto(
+                from.getEmail(),
+                from.getFirstName(),
+                from.getLastName(),
+                from.getTelNo(),
+                converter.convertToCandidateCvDto(from.getCv()))).collect(Collectors.toList());
+    }
 }
