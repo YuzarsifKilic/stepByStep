@@ -1,5 +1,7 @@
 package com.example.stepbystep.service;
 
+import com.example.stepbystep.dto.convert.CandidateDtoConverter;
+import com.example.stepbystep.dto.model.CandidateDto;
 import com.example.stepbystep.dto.request.CreateCandidateRequest;
 import com.example.stepbystep.exception.CandidateNotFoundException;
 import com.example.stepbystep.model.Candidate;
@@ -12,13 +14,26 @@ import java.util.List;
 public class CandidateService {
 
     private final CandidateRepository candidateRepository;
+    private final CandidateDtoConverter candidateDtoConverter;
 
-    public CandidateService(CandidateRepository candidateRepository) {
+    public CandidateService(CandidateRepository candidateRepository,
+                            CandidateDtoConverter candidateDtoConverter) {
         this.candidateRepository = candidateRepository;
+        this.candidateDtoConverter = candidateDtoConverter;
     }
 
-    public List<Candidate> getAll() {
-        return candidateRepository.findAll();
+    public List<CandidateDto> getAll() {
+        return candidateDtoConverter.convert(candidateRepository.findAll());
+    }
+
+    public CandidateDto getByEmail(String email) {
+        return candidateDtoConverter.convert(findByEmail(email));
+    }
+
+    private Candidate findByEmail(String email) {
+        return candidateRepository.findByEmail(email)
+                .orElseThrow(
+                        () -> new CandidateNotFoundException(email + " e sahip bir candidate bulunamadı"));
     }
 
     protected Candidate findById(String id) {

@@ -8,12 +8,9 @@ import org.springframework.stereotype.Component;
 public class JobAdvertisementDtoConvert {
 
     private final JobAdvertisementEmployerDtoConvert jobAdvertisementEmployerDtoConvert;
-    private final JobTitleDtoConverter jobTitleDtoConverter;
 
-    public JobAdvertisementDtoConvert(JobAdvertisementEmployerDtoConvert jobAdvertisementEmployerDtoConvert,
-                                      JobTitleDtoConverter jobTitleDtoConverter) {
+    public JobAdvertisementDtoConvert(JobAdvertisementEmployerDtoConvert jobAdvertisementEmployerDtoConvert) {
         this.jobAdvertisementEmployerDtoConvert = jobAdvertisementEmployerDtoConvert;
-        this.jobTitleDtoConverter = jobTitleDtoConverter;
     }
 
 }

@@ -9,6 +9,8 @@ import java.util.stream.IntStream;
 
 public class TestSupport {
 
+    private static String candidateId = "123456";
+
     public static List<Candidate> generateCandidates() {
         return IntStream.range(0, 5).mapToObj(
                 i -> new Candidate(
@@ -29,5 +31,23 @@ public class TestSupport {
                         from.getTelNo(),
                         null
                 )).collect(Collectors.toList());
+    }
+
+    public static Candidate generateCandidate(String email) {
+        return new Candidate(
+                candidateId,
+                email,
+                "firstName" + candidateId,
+                "lastName" + candidateId,
+                "phoneNumber" + candidateId);
+    }
+
+    public static CandidateDto generateCandidateDto(String email) {
+        return new CandidateDto(
+                email,
+                "firstName" + candidateId,
+                "lastName" + candidateId,
+                "phoneNumber" + candidateId,
+                null);
     }
 }

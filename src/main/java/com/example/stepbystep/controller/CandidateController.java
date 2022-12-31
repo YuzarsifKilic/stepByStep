@@ -1,5 +1,6 @@
 package com.example.stepbystep.controller;
 
+import com.example.stepbystep.dto.model.CandidateDto;
 import com.example.stepbystep.dto.request.CreateCandidateRequest;
 import com.example.stepbystep.model.Candidate;
 import com.example.stepbystep.service.CandidateService;
@@ -19,7 +20,7 @@ public class CandidateController {
     }
 
     @GetMapping("/getall")
-    public List<Candidate> getAll() {
+    public List<CandidateDto> getAll() {
         return candidateService.getAll();
     }
 

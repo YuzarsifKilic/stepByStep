@@ -9,28 +9,21 @@ import java.util.stream.Collectors;
 @Component
 public class CandidateCvDtoConverter {
 
-    private final UniversityDtoConverter universityDtoConverter;
     private final ExperienceDtoConverter experienceDtoConverter;
-    private final MajorDtoConverter majorDtoConverter;
 
-    public CandidateCvDtoConverter(UniversityDtoConverter universityDtoConverter,
-                                   ExperienceDtoConverter experienceDtoConverter,
-                                   MajorDtoConverter majorDtoConverter) {
-        this.universityDtoConverter = universityDtoConverter;
+    public CandidateCvDtoConverter(ExperienceDtoConverter experienceDtoConverter) {
         this.experienceDtoConverter = experienceDtoConverter;
-        this.majorDtoConverter = majorDtoConverter;
     }
 
     public CandidateCvDto convert(Cv from) {
         return new CandidateCvDto(
             from.getEntryOfUniversityYear(),
             from.getGraduatedYear(),
-            universityDtoConverter.convert(from.getUniversity()),
-            majorDtoConverter.convert(from.getMajor()),
+            from.getUniversity(),
+            from.getMajor(),
             from.getExperiences()
                     .stream()
-                    .map(e -> experienceDtoConverter.convert(e))
-                    .collect(Collectors.toSet())
-        );
+                    .map(e -> experienceDtoConverter.convertToCvExperienceDto(e))
+                    .collect(Collectors.toSet()));
     }
 }
