@@ -66,7 +66,7 @@ public class CvService {
         return converter.converter(cvRepository.save(cv));
     }
 
-    public Cv findById(String id) {
+    protected Cv findById(String id) {
         return cvRepository.findById(id).orElseThrow(
                 () -> new CvNotFoundException(id + "ye sahip bir cv bulunamadı"));
     }

@@ -3,8 +3,10 @@ package com.example.stepbystep.service;
 import com.example.stepbystep.dto.convert.ExperienceDtoConverter;
 import com.example.stepbystep.dto.model.ExperienceDto;
 import com.example.stepbystep.dto.request.CreateExperienceRequest;
+import com.example.stepbystep.dto.request.UpdateExperienceRequest;
 import com.example.stepbystep.model.Cv;
 import com.example.stepbystep.model.Experience;
+import com.example.stepbystep.model.JobTitle;
 import com.example.stepbystep.repository.ExperienceRepository;
 import org.springframework.stereotype.Service;
 
@@ -44,4 +46,19 @@ public class ExperienceService {
         return converter.convert(experienceRepository.save(experience));
     }
 
+    public ExperienceDto updateExperience(String cvId, UpdateExperienceRequest request) {
+        Set<Cv> cvs = new HashSet<>();
+        Cv cv = cvService.findById(cvId);
+        cvs.add(cv);
+        JobTitle jobTitle = jobTitleService.findById(request.getJobTitleId());
+
+        Experience experience = new Experience(
+                request.getCompanyName(),
+                request.getEntryYear(),
+                request.getQuitYear(),
+                jobTitle,
+                cvs);
+
+        return converter.convert(experienceRepository.save(experience));
+    }
 }
