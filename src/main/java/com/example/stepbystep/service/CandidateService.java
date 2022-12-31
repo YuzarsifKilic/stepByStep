@@ -26,11 +26,11 @@ public class CandidateService {
         return candidateDtoConverter.convert(candidateRepository.findAll());
     }
 
-    public CandidateDto getByEmail(String email) {
+    public CandidateDto getByEmail(final String email) {
         return candidateDtoConverter.convert(findByEmail(email));
     }
 
-    private Candidate findByEmail(String email) {
+    protected Candidate findByEmail(final String email) {
         return candidateRepository.findByEmail(email)
                 .orElseThrow(
                         () -> new CandidateNotFoundException(email + " e sahip bir candidate bulunamadı"));
@@ -42,24 +42,27 @@ public class CandidateService {
         );
     }
 
-    public Candidate save(CreateCandidateRequest request) {
+    public CandidateDto save(final CreateCandidateRequest request) {
         Candidate candidate = new Candidate(request.getEmail(),
                 request.getPassword(),
                 request.getFirstName(),
                 request.getLastName(),
                 request.getPhoneNumber());
-        return candidateRepository.save(candidate);
+        return candidateDtoConverter.convert(candidateRepository.save(candidate));
     }
 
-    private String checkTheEmailInUse(Candidate candidate) {
+
+    private String checkTheEmailInUse(final Candidate candidate) {
         final boolean result = candidateRepository.findAll().stream().noneMatch(c -> c.getEmail().equals(candidate.getEmail()));
         return result ? checkThePhoneInUse(candidate) : printError(Error.EmailInUse);
     }
 
-    private String checkThePhoneInUse(Candidate candidate) {
+    private String checkThePhoneInUse(final Candidate candidate) {
         final boolean result = candidateRepository.findAll().stream().noneMatch(c -> c.getTelNo().equals(candidate.getTelNo()));
         return result ? printError(Error.Successful) : printError(Error.PhoneNumberInUse);
     }
+
+
 
     enum Error{
         EmailInUse,

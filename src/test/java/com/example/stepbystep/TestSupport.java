@@ -19,7 +19,8 @@ public class TestSupport {
                     "password" + i,
                     "firstName" + i,
                     "lastName" + i,
-                    "telNo" + i)).collect(Collectors.toList());
+                    "telNo" + i,
+                     null)).collect(Collectors.toList());
     }
 
     public static List<CandidateDto> generateCandidateDtoList(List<Candidate> candidateList) {

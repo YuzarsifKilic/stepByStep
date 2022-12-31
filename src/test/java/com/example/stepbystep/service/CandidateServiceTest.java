@@ -33,31 +33,6 @@ public class CandidateServiceTest extends TestSupport {
     }
 
     @Test
-    public void whenCreateCandidateWithCalledValidRequest_itShouldReturnCandidate() {
-        CreateCandidateRequest createCandidateRequest = new CreateCandidateRequest(
-                "yuzarsifkilic@gmail.com",
-                "yuzarsif",
-                "Yusuf",
-                "Kılıç",
-                "5554443322");
-
-        Candidate candidate = new Candidate(
-                "yuzarsifkilic@gmail.com",
-                "yuzarsif",
-                "Yusuf",
-                "Kılıç",
-                "5554443322");
-
-        when(candidateRepository.save(candidate)).thenReturn(candidate);
-
-        Candidate result = candidateService.save(createCandidateRequest);
-
-        assertEquals(result, candidate);
-
-        verify(candidateRepository).save(candidate);
-    }
-
-    @Test
     public void testGetAllCandidates_itShouldReturnCandidateDtoList() {
         List<Candidate> candidateList = generateCandidates();
         List<CandidateDto> candidateDtoList = generateCandidateDtoList(candidateList);
@@ -100,4 +75,26 @@ public class CandidateServiceTest extends TestSupport {
         verify(candidateRepository).findByEmail(email);
         verifyNoInteractions(candidateDtoConverter);
     }
+
+    @Test
+    public void testCreateCandidate_itShouldReturnCandidateDto() {
+
+
+        CreateCandidateRequest request = new CreateCandidateRequest("email", "password", "firstName", "lastName", "phoneNumber");
+        Candidate candidate = new Candidate("email", "password", "firstName", "lastName", "phoneNumber");
+        Candidate savedCandidate = new Candidate("123456", "email", "password", "firstName", "lastName", "phoneNumber", null);
+        CandidateDto candidateDto = new CandidateDto("email", "firstName", "lastName", "phoneNumber", null);
+
+        when(candidateRepository.save(candidate)).thenReturn(savedCandidate);
+        when(candidateDtoConverter.convert(savedCandidate)).thenReturn(candidateDto);
+
+        CandidateDto result = candidateService.save(request);
+
+        assertEquals(candidateDto, result);
+
+        verify(candidateRepository).save(candidate);
+        verify(candidateDtoConverter).convert(savedCandidate);
+    }
+
+
 }

@@ -25,7 +25,7 @@ public class CandidateController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Candidate> save(@RequestBody CreateCandidateRequest request) {
+    public ResponseEntity<CandidateDto> save(@RequestBody CreateCandidateRequest request) {
         return ResponseEntity.ok(candidateService.save(request));
     }
 }

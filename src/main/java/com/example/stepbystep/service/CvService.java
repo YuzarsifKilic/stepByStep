@@ -3,8 +3,12 @@ package com.example.stepbystep.service;
 import com.example.stepbystep.dto.request.CreateCvRequest;
 import com.example.stepbystep.dto.model.CvDto;
 import com.example.stepbystep.dto.convert.CvDtoConverter;
+import com.example.stepbystep.dto.request.UpdateCvRequest;
 import com.example.stepbystep.exception.CvNotFoundException;
+import com.example.stepbystep.model.Candidate;
 import com.example.stepbystep.model.Cv;
+import com.example.stepbystep.model.Major;
+import com.example.stepbystep.model.University;
 import com.example.stepbystep.repository.CvRepository;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +48,21 @@ public class CvService {
                 universityService.findByUniversityId(request.getUniversityId()),
                 majorService.findById(request.getMajorId())
         );
+        return converter.converter(cvRepository.save(cv));
+    }
+
+    public CvDto updateCv(String email, UpdateCvRequest request) {
+        Candidate candidate = candidateService.findByEmail(email);
+        University university =  universityService.findByUniversityId(request.getUniversityId());
+        Major major = majorService.findById(request.getMajorId());
+
+        Cv cv = new Cv(
+                candidate,
+                request.getEntryOfUniversityYear(),
+                request.getGraduatedYear(),
+                university,
+                major);
+
         return converter.converter(cvRepository.save(cv));
     }
 

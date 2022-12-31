@@ -39,11 +39,12 @@ public class Candidate extends User{
         this.telNo = telNo;
     }
 
-    public Candidate(String id, String email, String password, String firstName, String lastName, String telNo) {
+    public Candidate(String id, String email, String password, String firstName, String lastName, String telNo, Cv cv) {
         super(id, email, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.telNo = telNo;
+        this.cv = cv;
     }
 
     public String getFirstName() {
