@@ -1,6 +1,7 @@
 package com.example.stepbystep.dto.model;
 
 import com.example.stepbystep.model.Major;
+import com.example.stepbystep.model.Skill;
 import com.example.stepbystep.model.University;
 
 import java.util.Set;
@@ -12,16 +13,18 @@ public class CvDto {
     private int graduatedYear;
     private University university;
     private Major major;
+    private Skill skill;
     private Set<CvExperienceDto> experienceDtos;
 
     public CvDto() {}
 
-    public CvDto(String id, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<CvExperienceDto> experienceDtos) {
+    public CvDto(String id, int entryOfUniversityYear, int graduatedYear, University university, Major major, Skill skill, Set<CvExperienceDto> experienceDtos) {
         this.id = id;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
         this.major = major;
+        this.skill = skill;
         this.experienceDtos = experienceDtos;
     }
 
@@ -71,5 +74,13 @@ public class CvDto {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Skill getSkill() {
+        return skill;
+    }
+
+    public void setSkill(Skill skill) {
+        this.skill = skill;
     }
 }

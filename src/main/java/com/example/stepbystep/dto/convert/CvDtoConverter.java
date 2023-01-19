@@ -24,6 +24,7 @@ public class CvDtoConverter {
                 from.getGraduatedYear(),
                 from.getUniversity(),
                 from.getMajor(),
+                from.getSkill(),
                 from.getExperiences().stream()
                         .map(e -> experienceDtoConverter.convertToCvExperienceDto(e))
                         .collect(Collectors.toSet()));

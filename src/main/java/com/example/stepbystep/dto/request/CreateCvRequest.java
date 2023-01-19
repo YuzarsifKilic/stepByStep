@@ -7,15 +7,17 @@ public class CreateCvRequest {
     private int graduatedYear;
     private int universityId;
     private int majorId;
+    private int skillId;
 
     public CreateCvRequest() {}
 
-    public CreateCvRequest(String candidateId, int entryOfUniversityYear, int graduatedYear, int universityId, int majorId) {
+    public CreateCvRequest(String candidateId, int entryOfUniversityYear, int graduatedYear, int universityId, int majorId, int skillId) {
         this.candidateId = candidateId;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.universityId = universityId;
         this.majorId = majorId;
+        this.skillId = skillId;
     }
 
     public int getEntryOfUniversityYear() {
@@ -56,5 +58,13 @@ public class CreateCvRequest {
 
     public void setMajorId(int majorId) {
         this.majorId = majorId;
+    }
+
+    public int getSkillId() {
+        return skillId;
+    }
+
+    public void setSkillId(int skillId) {
+        this.skillId = skillId;
     }
 }

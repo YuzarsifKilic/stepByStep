@@ -22,6 +22,7 @@ class CvServiceTest {
     private UniversityService universityService;
     private CandidateService candidateService;
     private MajorService majorService;
+    private SkillService skillService;
     private CvDtoConverter converter;
 
     @BeforeEach
@@ -30,9 +31,10 @@ class CvServiceTest {
         universityService = Mockito.mock(UniversityService.class);
         candidateService = Mockito.mock(CandidateService.class);
         majorService = Mockito.mock(MajorService.class);
+        skillService = Mockito.mock(SkillService.class);
         converter = Mockito.mock(CvDtoConverter.class);
 
-        cvService = new CvService(cvRepository, universityService, candidateService, majorService, converter);
+        cvService = new CvService(cvRepository, universityService, candidateService, majorService, skillService, converter);
     }
 
     /*

@@ -5,10 +5,7 @@ import com.example.stepbystep.dto.model.CvDto;
 import com.example.stepbystep.dto.convert.CvDtoConverter;
 import com.example.stepbystep.dto.request.UpdateCvRequest;
 import com.example.stepbystep.exception.CvNotFoundException;
-import com.example.stepbystep.model.Candidate;
-import com.example.stepbystep.model.Cv;
-import com.example.stepbystep.model.Major;
-import com.example.stepbystep.model.University;
+import com.example.stepbystep.model.*;
 import com.example.stepbystep.repository.CvRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,17 +19,20 @@ public class CvService {
     private final UniversityService universityService;
     private final CandidateService candidateService;
     private final MajorService majorService;
+    private final SkillService skillService;
     private final CvDtoConverter converter;
 
     public CvService(CvRepository cvRepository,
                      UniversityService universityService,
                      CandidateService candidateService,
                      MajorService majorService,
+                     SkillService skillService,
                      CvDtoConverter converter) {
         this.cvRepository = cvRepository;
         this.universityService = universityService;
         this.candidateService = candidateService;
         this.majorService = majorService;
+        this.skillService = skillService;
         this.converter = converter;
     }
 
@@ -46,8 +46,8 @@ public class CvService {
                 request.getEntryOfUniversityYear(),
                 request.getGraduatedYear(),
                 universityService.findByUniversityId(request.getUniversityId()),
-                majorService.findById(request.getMajorId())
-        );
+                majorService.findById(request.getMajorId()),
+                skillService.findById(request.getSkillId()));
         return converter.converter(cvRepository.save(cv));
     }
 
@@ -55,13 +55,15 @@ public class CvService {
         Candidate candidate = candidateService.findByEmail(email);
         University university =  universityService.findByUniversityId(request.getUniversityId());
         Major major = majorService.findById(request.getMajorId());
+        Skill skill = skillService.findById(request.getSkillId());
 
         Cv cv = new Cv(
                 candidate,
                 request.getEntryOfUniversityYear(),
                 request.getGraduatedYear(),
                 university,
-                major);
+                major,
+                skill);
 
         return converter.converter(cvRepository.save(cv));
     }
