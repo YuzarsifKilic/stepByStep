@@ -22,12 +22,9 @@ public class Experience {
     @ManyToOne
     @JoinColumn(name = "job_title_id")
     private JobTitle jobTitle;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
-    @JsonManagedReference
-    @JoinTable(name = "cv_experience",
-                joinColumns = {@JoinColumn(name = "experience_id")},
-                inverseJoinColumns = {@JoinColumn(name = "cv_id")})
-    private Set<Cv> cvs = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "cv_id")
+    private Cv cv;
 
     public JobTitle getJobTitle() {
         return jobTitle;
@@ -39,21 +36,21 @@ public class Experience {
 
     public Experience() {}
 
-    public Experience(String companyName, int entryYear, int quitYear, JobTitle jobTitle, Set<Cv> cvs) {
+    public Experience(String companyName, int entryYear, int quitYear, JobTitle jobTitle, Cv cv) {
         this.companyName = companyName;
         this.entryYear = entryYear;
         this.quitYear = quitYear;
         this.jobTitle = jobTitle;
-        this.cvs = cvs;
+        this.cv =cv;
     }
 
-    public Experience(String id, String companyName, int entryYear, int quitYear, JobTitle jobTitle, Set<Cv> cvs) {
+    public Experience(String id, String companyName, int entryYear, int quitYear, JobTitle jobTitle, Cv cv) {
         this.id = id;
         this.companyName = companyName;
         this.entryYear = entryYear;
         this.quitYear = quitYear;
         this.jobTitle = jobTitle;
-        this.cvs = cvs;
+        this.cv =cv;
     }
 
     public String getId() {
@@ -72,12 +69,12 @@ public class Experience {
         this.companyName = companyName;
     }
 
-    public Set<Cv> getCvs() {
-        return cvs;
+    public Cv getCv() {
+        return cv;
     }
 
-    public void setCvs(Set<Cv> cvs) {
-        this.cvs = cvs;
+    public void setCv(Cv cv) {
+        this.cv = cv;
     }
 
     public int getEntryYear() {

@@ -27,7 +27,10 @@ public class Cv {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "major_id", nullable = false)
     private Major major;
-    @ManyToMany(mappedBy = "cvs")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "skill_id", nullable = false)
+    private Skill skill;
+    @OneToMany(mappedBy = "cv", cascade = {CascadeType.ALL})
     private Set<Experience> experiences = new HashSet<>();
 
     public Candidate getCandidate() {
@@ -56,30 +59,33 @@ public class Cv {
 
     public Cv() {}
 
-    public Cv(Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major) {
+    public Cv(Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major, Skill skill) {
         this.candidate = candidate;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
         this.major = major;
+        this.skill = skill;
     }
 
-    public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major) {
+    public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major, Skill skill) {
         this.id = id;
         this.candidate = candidate;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
         this.major = major;
+        this.skill = skill;
     }
 
-    public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major, Set<Experience> experiences) {
+    public Cv(String id, Candidate candidate, int entryOfUniversityYear, int graduatedYear, University university, Major major, Skill skill, Set<Experience> experiences) {
         this.id = id;
         this.candidate = candidate;
         this.entryOfUniversityYear = entryOfUniversityYear;
         this.graduatedYear = graduatedYear;
         this.university = university;
         this.major = major;
+        this.skill = skill;
         this.experiences = experiences;
     }
 
@@ -113,5 +119,13 @@ public class Cv {
 
     public void setExperiences(Set<Experience> experiences) {
         this.experiences = experiences;
+    }
+
+    public Skill getSkill() {
+        return skill;
+    }
+
+    public void setSkill(Skill skill) {
+        this.skill = skill;
     }
 }

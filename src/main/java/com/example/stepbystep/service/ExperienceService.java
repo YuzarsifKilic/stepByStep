@@ -32,24 +32,19 @@ public class ExperienceService {
     }
 
     public ExperienceDto save(CreateExperienceRequest request) {
-        Set<Cv> cvs = new HashSet<>();
-        cvs.add(cvService.findById(request.getCvId()));
-
         Experience experience = new Experience(
                 request.getCompanyName(),
                 request.getEntryYear(),
                 request.getQuitYear(),
                 jobTitleService.findById(request.getJobTitleId()),
-                cvs
+                cvService.findById(request.getCvId())
         );
 
         return converter.convert(experienceRepository.save(experience));
     }
 
     public ExperienceDto updateExperience(String cvId, UpdateExperienceRequest request) {
-        Set<Cv> cvs = new HashSet<>();
         Cv cv = cvService.findById(cvId);
-        cvs.add(cv);
         JobTitle jobTitle = jobTitleService.findById(request.getJobTitleId());
 
         Experience experience = new Experience(
@@ -57,7 +52,7 @@ public class ExperienceService {
                 request.getEntryYear(),
                 request.getQuitYear(),
                 jobTitle,
-                cvs);
+                cv);
 
         return converter.convert(experienceRepository.save(experience));
     }
