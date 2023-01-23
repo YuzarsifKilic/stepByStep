@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da08a534-f75b-42a1-973c-9673f7c72a35" name="Changes" comment="updated for skill class">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/StepByStepApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/controller/CandidateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/controller/CvController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/controller/ExperienceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/CandidateCvDtoConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/CandidateDtoConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/CvDtoConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/EmployerDtoConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/ExperienceDtoConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/JobAdvertisementDtoConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/JobAdvertisementEmployerDtoConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/CandidateCvDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/CandidateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/CvDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/CvExperienceDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/EmployerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/ExperienceDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/JobAdvertisementDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/model/JobAdvertisementEmployerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/request/CreateCandidateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/request/CreateCvRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/request/CreateEmployerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/request/CreateExperienceRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/request/UpdateCvRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/request/UpdateExperienceRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/exception/CandidateNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/exception/CvNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/exception/JobTitleNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/exception/MajorNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/exception/SkillNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/exception/UniversityNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/Candidate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/Cv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/Employer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/Experience.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/JobAdvertisement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/JobTitle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/Major.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/Skill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/University.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/CandidateRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/CvRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/EmployerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/ExperienceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/JobAdvertisementRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/JobTitleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/MajorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/SkillRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/repository/UniversityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/CandidateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/CvService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/EmployerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/ExperienceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/JobAdvertisementService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/JobTitleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/MajorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/SkillService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/UniversityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/stepbystep/StepByStepApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/stepbystep/TestSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/stepbystep/service/CandidateServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/stepbystep/service/CvServiceTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Izt6SC7WjWoRbFI1xDMeAjcXIZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/java_bootcamp/stepByStep/stepByStep-api",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.stepbystep.dto" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.stepbystep.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StepByStepApplication">
+    <configuration name="StepByStepApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.stepbystep.StepByStepApplication" />
+      <module name="stepByStep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.stepbystep.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CandidateServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stepByStep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.stepbystep.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.stepbystep.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.stepbystep.service.CandidateServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CandidateServiceTest.testCreateCandidate_itShouldReturnCandidateDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stepByStep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.stepbystep.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.stepbystep.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.stepbystep.service.CandidateServiceTest" />
+      <option name="METHOD_NAME" value="testCreateCandidate_itShouldReturnCandidateDto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CandidateServiceTest.testGetByCandidateEmail_whenCandidateEmailDoesNotExist_itShouldThrowCandidateNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stepByStep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.stepbystep.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.stepbystep.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.stepbystep.service.CandidateServiceTest" />
+      <option name="METHOD_NAME" value="testGetByCandidateEmail_whenCandidateEmailDoesNotExist_itShouldThrowCandidateNotFoundException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CandidateServiceTest.testGetByCandidateEmail_whenCandidateEmailExist_itShouldReturnCandidateDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stepByStep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.stepbystep.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.stepbystep.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.stepbystep.service.CandidateServiceTest" />
+      <option name="METHOD_NAME" value="testGetByCandidateEmail_whenCandidateEmailExist_itShouldReturnCandidateDto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="stepByStep" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="stepByStep" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StepByStepApplication" />
+        <item itemvalue="JUnit.CandidateServiceTest" />
+        <item itemvalue="JUnit.CandidateServiceTest.testCreateCandidate_itShouldReturnCandidateDto" />
+        <item itemvalue="JUnit.CandidateServiceTest.testGetByCandidateEmail_whenCandidateEmailDoesNotExist_itShouldThrowCandidateNotFoundException" />
+        <item itemvalue="JUnit.CandidateServiceTest.testGetByCandidateEmail_whenCandidateEmailExist_itShouldReturnCandidateDto" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da08a534-f75b-42a1-973c-9673f7c72a35" name="Changes" comment="" />
+      <created>1671196065281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671196065281</updated>
+    </task>
+    <task id="LOCAL-00001" summary="change manytomany to manytoone for cv - experience class and skill class added">
+      <created>1674131882354</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674131882355</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated for skill class">
+      <created>1674134438314</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674134438314</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change manytomany to manytoone for cv - experience class and skill class added" />
+    <MESSAGE value="updated for skill class" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated for skill class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/stepbystep/service/CandidateService.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/CandidateDtoConverter.java</url>
+          <line>39</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/stepbystep/dto/convert/CandidateDtoConverter.java</url>
+          <line>38</line>
+          <properties class="com.example.stepbystep.dto.convert.CandidateDtoConverter" method="convert">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
