@@ -36,6 +36,15 @@ public class JobAdvertisement {
         this.employer = employer;
     }
 
+    public JobAdvertisement(JobTitle jobTitle, boolean isActive, int minSalary, int maxSalary, int positionCount, Employer employer) {
+        this.jobTitle = jobTitle;
+        this.isActive = isActive;
+        this.minSalary = minSalary;
+        this.maxSalary = maxSalary;
+        this.positionCount = positionCount;
+        this.employer = employer;
+    }
+
     public JobTitle getJobTitle() {
         return jobTitle;
     }

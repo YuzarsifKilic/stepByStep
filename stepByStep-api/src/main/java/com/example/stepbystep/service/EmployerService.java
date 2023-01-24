@@ -3,6 +3,7 @@ package com.example.stepbystep.service;
 import com.example.stepbystep.dto.convert.EmployerDtoConvert;
 import com.example.stepbystep.dto.model.EmployerDto;
 import com.example.stepbystep.dto.request.CreateEmployerRequest;
+import com.example.stepbystep.exception.EmployerNotFoundException;
 import com.example.stepbystep.model.Employer;
 import com.example.stepbystep.repository.EmployerRepository;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,19 @@ public class EmployerService {
                 request.getWebSite()
         );
         return convert.convert(employerRepository.save(employer));
+    }
+
+    protected Employer findById(String id) {
+        return employerRepository
+                .findById(id)
+                .orElseThrow(
+                        () -> new EmployerNotFoundException(id + " ye sahip bir Employer bulunamadı"));
+    }
+
+    protected Employer findByEmail(String email) {
+        return employerRepository
+                .findByEmail(email)
+                .orElseThrow(
+                        () -> new EmployerNotFoundException(email + " e sahip bir Employer bulunamadı"));
     }
 }
